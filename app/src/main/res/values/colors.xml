@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Nuez / madera -->
+    <color name="angel_primary">#7A4A21</color>
+    <color name="angel_primary_dark_tone">#4E2D12</color>
+    <color name="angel_on_primary_container">#2C1600</color>
+    <color name="angel_primary_container">#F4DFC3</color>
+
+    <!-- Pistacho / oliva -->
+    <color name="angel_secondary">#5F6B3A</color>
+    <color name="angel_secondary_container">#E3E8C9</color>
+    <color name="angel_on_secondary_container">#1B2108</color>
+
+    <!-- Queso -->
+    <color name="angel_tertiary">#B9811C</color>
+    <color name="angel_tertiary_container">#FBE7B0</color>
+    <color name="angel_on_tertiary_container">#2E1F00</color>
+
+    <!-- Superficies claras (crema) -->
+    <color name="angel_background">#FAF4E8</color>
+    <color name="angel_surface">#FFFDF8</color>
+    <color name="angel_surface_variant">#F1E7D3</color>
+    <color name="angel_on_surface">#2B2118</color>
+    <color name="angel_on_surface_variant">#706150</color>
+    <color name="angel_outline">#BFAE92</color>
+    <color name="angel_outline_variant">#E6DAC3</color>
+
+
+    <!-- Modo oscuro -->
+    <color name="angel_primary_night">#F2BC87</color>
+    <color name="angel_on_primary_night">#4A2800</color>
+    <color name="angel_primary_container_night">#5A3815</color>
+    <color name="angel_secondary_night">#C9D49F</color>
+    <color name="angel_secondary_container_night">#3F4825</color>
+    <color name="angel_tertiary_night">#EBC36F</color>
+    <color name="angel_tertiary_container_night">#5A4210</color>
+    <color name="angel_background_night">#1A140F</color>
+    <color name="angel_surface_night">#231B14</color>
+    <color name="angel_surface_variant_night">#33281D</color>
+    <color name="angel_on_surface_night">#EFE3D0</color>
+    <color name="angel_on_surface_variant_night">#C5B6A0</color>
+    <color name="angel_outline_night">#8A7A64</color>
+    <color name="angel_outline_variant_night">#43372A</color>
+</resources>

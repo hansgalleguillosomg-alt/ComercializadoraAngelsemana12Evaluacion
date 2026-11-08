@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- CU-07: búsqueda de productos con la cámara -->
+    <item
+        android:id="@+id/action_escanear"
+        android:icon="@drawable/ic_barcode"
+        android:title="Escanear código de barras"
+        app:showAsAction="always" />
+
+    <!-- CU-04 / CU-05: Movimientos de bodega -->
+    <item
+        android:id="@+id/action_entrada"
+        android:title="Registrar entrada"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_salida"
+        android:title="Registrar salida"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_historial"
+        android:title="Historial de movimientos"
+        app:showAsAction="never" />
+
+    <!-- CU-06: Informes -->
+    <item
+        android:id="@+id/action_informe"
+        android:title="Informe de stock"
+        app:showAsAction="never" />
+
+    <!-- CU-08: Ubicación de la empresa -->
+    <item
+        android:id="@+id/action_ubicacion"
+        android:title="Ubicación de la empresa"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_categorias"
+        android:title="Categorías"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_proveedores"
+        android:title="Proveedores"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_usuarios"
+        android:title="Usuarios y roles"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="Cerrar sesión"
+        app:showAsAction="never" />
+</menu>

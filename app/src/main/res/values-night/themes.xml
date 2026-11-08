@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ComercializadoraAngel" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/angel_primary_night</item>
+        <item name="colorOnPrimary">@color/angel_on_primary_night</item>
+        <item name="colorPrimaryContainer">@color/angel_primary_container_night</item>
+        <item name="colorOnPrimaryContainer">@color/angel_primary_container</item>
+        <item name="colorSecondary">@color/angel_secondary_night</item>
+        <item name="colorOnSecondary">#252C0E</item>
+        <item name="colorSecondaryContainer">@color/angel_secondary_container_night</item>
+        <item name="colorOnSecondaryContainer">@color/angel_secondary_container</item>
+        <item name="colorTertiary">@color/angel_tertiary_night</item>
+        <item name="colorOnTertiary">#3E2A00</item>
+        <item name="colorTertiaryContainer">@color/angel_tertiary_container_night</item>
+        <item name="colorOnTertiaryContainer">@color/angel_tertiary_container</item>
+        <item name="android:colorBackground">@color/angel_background_night</item>
+        <item name="colorSurface">@color/angel_surface_night</item>
+        <item name="colorOnSurface">@color/angel_on_surface_night</item>
+        <item name="colorSurfaceVariant">@color/angel_surface_variant_night</item>
+        <item name="colorOnSurfaceVariant">@color/angel_on_surface_variant_night</item>
+        <item name="colorOutline">@color/angel_outline_night</item>
+        <item name="colorOutlineVariant">@color/angel_outline_variant_night</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">@color/angel_background_night</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Angel.Dialog</item>
+        <item name="materialCardViewOutlinedStyle">@style/Widget.Angel.Card</item>
+        <item name="toolbarStyle">@style/Widget.Angel.Toolbar</item>
+    </style>
+</resources>

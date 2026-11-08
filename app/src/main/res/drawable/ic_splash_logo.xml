@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Medallón del logo de Comercializadora Angel (nuez + almendras + queso) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="600"
+    android:viewportHeight="600">
+
+    <group android:translateX="-212" android:translateY="-80">
+        <!-- Medallón -->
+        <path
+            android:fillColor="#5E3818"
+            android:pathData="M512,80a300,300 0,1 0,0.1 0Z" />
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#EBC36F"
+            android:strokeWidth="5"
+            android:pathData="M512,104a276,276 0,1 0,0.1 0Z" />
+
+        <!-- Hojas de pistacho -->
+        <group android:pivotX="512" android:pivotY="168" android:rotation="-35">
+            <path
+                android:fillColor="#C9D49F"
+                android:pathData="M512,134a16,34 0,1 0,0.1 0Z" />
+        </group>
+        <group android:pivotX="512" android:pivotY="168" android:rotation="35">
+            <path
+                android:fillColor="#C9D49F"
+                android:pathData="M512,134a16,34 0,1 0,0.1 0Z" />
+        </group>
+
+        <!-- Almendra grande -->
+        <group android:pivotX="384" android:pivotY="361" android:rotation="-18">
+            <group android:translateX="300" android:translateY="235" android:scaleX="14" android:scaleY="14">
+                <path
+                    android:fillColor="#D9AC76"
+                    android:pathData="M6,0C10.5,4 12,8 12,11C12,15 9.3,18 6,18C2.7,18 0,15 0,11C0,8 1.5,4 6,0Z" />
+                <path
+                    android:fillColor="#00000000"
+                    android:strokeColor="#7A4A21"
+                    android:strokeWidth="0.9"
+                    android:strokeLineCap="round"
+                    android:pathData="M6,2C5,6 5,10 6,13" />
+            </group>
+        </group>
+
+        <!-- Almendra pistacho -->
+        <group android:pivotX="455" android:pivotY="390" android:rotation="14">
+            <group android:translateX="395" android:translateY="300" android:scaleX="10" android:scaleY="10">
+                <path
+                    android:fillColor="#C9D49F"
+                    android:pathData="M6,0C10.5,4 12,8 12,11C12,15 9.3,18 6,18C2.7,18 0,15 0,11C0,8 1.5,4 6,0Z" />
+                <path
+                    android:fillColor="#00000000"
+                    android:strokeColor="#5F6B3A"
+                    android:strokeWidth="1.1"
+                    android:strokeLineCap="round"
+                    android:pathData="M6,2C5,6 5,10 6,13" />
+            </group>
+        </group>
+
+        <!-- Cuña de queso -->
+        <group android:translateX="450" android:translateY="330" android:scaleX="14" android:scaleY="14">
+            <path
+                android:fillColor="#F2CF7A"
+                android:fillType="evenOdd"
+                android:pathData="M3,18L3,11L21,6L21,18Z M6.7,15a1.3,1.3 0,1 0,2.6 0a1.3,1.3 0,1 0,-2.6 0Z M12.5,14a1,1 0,1 0,2 0a1,1 0,1 0,-2 0Z M16.5,11.5a1.1,1.1 0,1 0,2.2 0a1.1,1.1 0,1 0,-2.2 0Z" />
+            <path
+                android:fillColor="#B9811C"
+                android:fillAlpha="0.35"
+                android:pathData="M3,11L21,6L21,8L3,13Z" />
+        </group>
+    </group>
+</vector>

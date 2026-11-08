@@ -1,0 +1,168 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ComercializadoraAngel" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/angel_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/angel_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/angel_on_primary_container</item>
+        <item name="colorSecondary">@color/angel_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/angel_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/angel_on_secondary_container</item>
+        <item name="colorTertiary">@color/angel_tertiary</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/angel_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/angel_on_tertiary_container</item>
+        <item name="android:colorBackground">@color/angel_background</item>
+        <item name="colorSurface">@color/angel_surface</item>
+        <item name="colorOnSurface">@color/angel_on_surface</item>
+        <item name="colorSurfaceVariant">@color/angel_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/angel_on_surface_variant</item>
+        <item name="colorOutline">@color/angel_outline</item>
+        <item name="colorOutlineVariant">@color/angel_outline_variant</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">@color/angel_background</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Angel.Dialog</item>
+        <item name="materialCardViewOutlinedStyle">@style/Widget.Angel.Card</item>
+        <item name="toolbarStyle">@style/Widget.Angel.Toolbar</item>
+    </style>
+
+    <style name="Theme.ComercializadoraAngel" parent="Base.Theme.ComercializadoraAngel" />
+
+    <!-- Diálogos -->
+    <style name="ThemeOverlay.Angel.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Angel.Dialog</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="ShapeAppearance.Angel.Dialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <!-- Tarjetas de lista -->
+    <style name="Widget.Angel.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">18dp</item>
+        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Barra superior -->
+    <style name="Widget.Angel.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@drawable/bg_toolbar</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">#E8D6BE</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Angel.ToolbarTitle</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.Angel.ToolbarSubtitle</item>
+        <item name="navigationIconTint">@color/white</item>
+        <item name="popupTheme">@style/ThemeOverlay.Angel.Popup</item>
+    </style>
+    <style name="ThemeOverlay.Angel.Toolbar" parent="">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+    <!-- Menú de los tres puntos: fondo crema/oscuro y texto con contraste -->
+    <style name="ThemeOverlay.Angel.Popup" parent="">
+        <item name="android:textColorPrimary">?attr/colorOnSurface</item>
+        <item name="android:textColorSecondary">?attr/colorOnSurfaceVariant</item>
+        <item name="colorControlNormal">?attr/colorOnSurfaceVariant</item>
+        <item name="popupMenuStyle">@style/Widget.Angel.PopupMenu</item>
+    </style>
+    <style name="Widget.Angel.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_popup</item>
+    </style>
+    <style name="TextAppearance.Angel.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearance.Angel.ToolbarSubtitle" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Textos -->
+    <style name="TextAppearance.Angel.Brand" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextAppearance.Angel.ItemTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="TextAppearance.Angel.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="TextAppearance.Angel.Section" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <!-- Campos de texto -->
+    <style name="Widget.Angel.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Búsqueda -->
+    <style name="Widget.Angel.Search" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">?attr/colorSurface</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxCornerRadiusTopStart">28dp</item>
+        <item name="boxCornerRadiusTopEnd">28dp</item>
+        <item name="boxCornerRadiusBottomStart">28dp</item>
+        <item name="boxCornerRadiusBottomEnd">28dp</item>
+        <item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="startIconTint">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Botones -->
+    <style name="Widget.Angel.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">16dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+    <style name="Widget.Angel.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="Widget.Angel.Button.TextDanger" parent="Widget.Material3.Button.TextButton">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">?attr/colorError</item>
+        <item name="rippleColor">#22B3261E</item>
+    </style>
+
+    <!-- Chips informativos dentro de las tarjetas -->
+    <style name="Widget.Angel.Badge" parent="">
+        <item name="android:paddingHorizontal">10dp</item>
+        <item name="android:paddingVertical">4dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_badge</item>
+    </style>
+
+    <!-- Botón flotante -->
+    <style name="Widget.Angel.Fab" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="iconTint">?attr/colorOnPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Angel.Fab</item>
+    </style>
+    <style name="ShapeAppearance.Angel.Fab" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- PDF de informes generados en cache/informes (se comparten con FileProvider) -->
+    <cache-path
+        name="informes"
+        path="informes/" />
+</paths>
