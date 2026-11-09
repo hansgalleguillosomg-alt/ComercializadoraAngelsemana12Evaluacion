@@ -1,8 +1,11 @@
 package com.example.comercializadoraangel;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -29,9 +32,14 @@ import com.example.comercializadoraangel.util.SessionManager;
 import com.example.comercializadoraangel.util.UiUtils;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,6 +97,7 @@ public class InformeStockActivity extends AppCompatActivity {
         spEstado = findViewById(R.id.spEstado);
         etProductoFiltro = findViewById(R.id.etProductoFiltro);
         MaterialButton btnGenerar = findViewById(R.id.btnGenerar);
+        MaterialButton btnExportar = findViewById(R.id.btnExportar);
 
         adapter = new FilaAdapter();
         rvInforme.setLayoutManager(new LinearLayoutManager(this));
@@ -110,6 +119,7 @@ public class InformeStockActivity extends AppCompatActivity {
         spEstado.setAdapter(adapterEstado);
 
         btnGenerar.setOnClickListener(v -> generarInforme());
+        btnExportar.setOnClickListener(v -> exportarPdf());
         etProductoFiltro.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 generarInforme();
@@ -215,6 +225,7 @@ public class InformeStockActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /** Genera el PDF, guarda una copia en Descargas y ofrece compartirlo. */
     private void exportarPdf() {
         if (ultimoInforme.isEmpty()) {
             UiUtils.mensaje(findViewById(R.id.main), "No hay datos para exportar");
@@ -222,6 +233,52 @@ public class InformeStockActivity extends AppCompatActivity {
         }
         try {
             File archivo = InformePdf.generar(this, ultimoInforme, ultimosFiltros, session.getNombreCompleto());
+            boolean enDescargas = guardarEnDescargas(archivo);
+            String texto = enDescargas
+                    ? "PDF guardado en Descargas: " + archivo.getName()
+                    : "PDF generado, pero no se pudo guardar en Descargas";
+            Snackbar.make(findViewById(R.id.main), texto, Snackbar.LENGTH_LONG)
+                    .setDuration(8000)
+                    .setAction("Compartir", v -> compartirPdf(archivo))
+                    .show();
+        } catch (Exception e) {
+            UiUtils.mensaje(findViewById(R.id.main), "No se pudo generar el PDF");
+        }
+    }
+
+    /**
+     * Copia el PDF a la carpeta Descargas del teléfono (MediaStore, sin permisos: minSdk 30).
+     *
+     * @return true si la copia quedó guardada
+     */
+    private boolean guardarEnDescargas(File origen) {
+        ContentValues valores = new ContentValues();
+        valores.put(MediaStore.Downloads.DISPLAY_NAME, origen.getName());
+        valores.put(MediaStore.Downloads.MIME_TYPE, "application/pdf");
+        valores.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+        Uri destino = getContentResolver().insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, valores);
+        if (destino == null) {
+            return false;
+        }
+        try (InputStream entrada = new FileInputStream(origen);
+             OutputStream salida = getContentResolver().openOutputStream(destino)) {
+            if (salida == null) {
+                return false;
+            }
+            byte[] buffer = new byte[8192];
+            int leidos;
+            while ((leidos = entrada.read(buffer)) > 0) {
+                salida.write(buffer, 0, leidos);
+            }
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    /** Abre el selector de Android para enviar el PDF por correo, Bluetooth, Drive, etc. */
+    private void compartirPdf(File archivo) {
+        try {
             Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", archivo);
             Intent enviar = new Intent(Intent.ACTION_SEND);
             enviar.setType("application/pdf");
@@ -230,7 +287,7 @@ public class InformeStockActivity extends AppCompatActivity {
             enviar.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(Intent.createChooser(enviar, "Compartir informe de stock"));
         } catch (Exception e) {
-            UiUtils.mensaje(findViewById(R.id.main), "No se pudo generar el PDF");
+            UiUtils.mensaje(findViewById(R.id.main), "No se pudo compartir el PDF");
         }
     }
 
