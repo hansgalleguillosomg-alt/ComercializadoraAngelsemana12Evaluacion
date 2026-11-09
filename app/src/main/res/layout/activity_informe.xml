@@ -83,6 +83,15 @@
                 android:text="Generar" />
         </LinearLayout>
 
+        <!-- RF-23: botón visible para exportar el informe a PDF -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExportar"
+            style="@style/Widget.Angel.Button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:text="Exportar PDF" />
+
         <TextView
             android:id="@+id/tvResumen"
             android:layout_width="match_parent"
